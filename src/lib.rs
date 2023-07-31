@@ -45,7 +45,7 @@ async fn handler(workspace: &str, channel: &str, sm: SlackMessage) {
 
     if sm.text.contains(&trigger_word) {
         if let Some(res) = analyze_commits(owner, repo, user_name).await {
-            send_message_to_channel("ik8", "ch_in", res.clone()).await;
+            send_message_to_channel("secondstate", "test-flow", res.clone()).await;
             let commits_summaries = res;
             if let Some(issues) = get_issues(owner, repo, user_name).await {
                 let mut issues_summaries = String::new();
